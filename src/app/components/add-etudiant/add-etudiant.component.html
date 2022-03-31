@@ -1,0 +1,28 @@
+
+ <div class="form">
+    <h1>Add Etudiant</h1>
+    <form [formGroup]="form" (ngSubmit)="addEtudiant()" id="form">
+        <div>
+            <label for="cne"> CNE </label>
+            <input formControlName="cne" id="cne" type="text" placeholder="Entrer le CNE">
+        </div>
+        <div>
+            <label for="Nom"> Nom </label> 
+            <input formControlName="nom" id="nom" type="text" placeholder="Entrer le Nom">
+        </div>
+        <div>
+            <label for="Prenom"> Prenom </label>
+            <input formControlName="prenom" id="prenom" type="text" placeholder="Enter le Prenom">
+        </div>
+        <div>
+            <label for="Option"> Option </label>
+            <select id="option" formControlName="option"> 
+                    <option  *ngFor="let x of data" value={{x.nom}}>{{x.nom}}</option>
+            </select>
+        </div>
+        <div>
+            <button id="insert" type="submit" >Submit</button>
+            <button type="reset" >Reset</button>
+        </div>
+        </form>
+</div>

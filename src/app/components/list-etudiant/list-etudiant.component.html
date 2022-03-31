@@ -1,0 +1,55 @@
+<!-- <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form [formGroup]="form" (ngSubmit)="updateEtudiant()" id="form">
+            <div class="ligne">
+                <label for="cne"> CNE </label>
+                <input formControlName="cne" id="cne" type="text" placeholder="cne">
+            </div>
+            <div class="ligne">
+                <label for="Nom"> Nom </label> 
+                <input formControlName="nom" id="nom" type="text" placeholder="Nom">
+            </div>
+            <div class="ligne">
+                <label for="Prenom"> Prenom </label>
+                <input formControlName="prenom" id="prenom" type="text" placeholder="Prenom">
+            </div>
+            <div class="ligne">
+                <label for="Option"> Option </label>
+                <select id="option"> 
+                </select>
+            </div>
+            <div class="buttons">
+                <button id="insert" type="submit" [disabled]="!form.valid">Submit</button>
+                <button type="button" (click)="reset()">Reset</button>
+            </div>
+            </form>
+    </div>
+</div> -->
+<div class="container">
+    <h1>List Etudiants</h1>
+    <table>
+        <thead>
+            <tr>
+            <th>CNE</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Option</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let x of data.data">
+            <td>{{x.cne}}</td>
+            <td>{{x.nom}}</td>
+            <td>{{x.prenom}}</td>
+            <td>{{x.option.nom}}</td>
+            <td>
+                <button (click)="deleteOption(x)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-person-x-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                  </svg></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

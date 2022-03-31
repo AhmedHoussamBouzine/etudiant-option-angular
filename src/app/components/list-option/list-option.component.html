@@ -1,0 +1,38 @@
+<!-- <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form [formGroup]="form" (ngSubmit)="updateOption()" id="form">
+            <div class="ligne">
+                <label for="nom option"> Nom Option </label> <input id="nom"  formControlName="nom" type="text" placeholder="nom option">
+            </div>
+            <div class="ligne">
+                <label for="description"> Description </label> <input  formControlName="description" id="description" type="text" placeholder="description">
+            </div>
+            <div class="buttons">
+                <button id="insert" type="submit" [disabled]="!form.valid">Submit</button>
+                <button type="button" (click)="reset()">Reset</button>
+            </div>
+            </form>
+    </div>
+</div> -->
+<div class="container">
+    <h1>List Options</h1>
+    <table>
+        <thead>
+            <tr>
+            <th>Nom</th>
+            <th>description</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr  *ngFor="let x of data.data">
+                <td>{{x.nom}}</td>
+                <td>{{x.Description}}</td>
+                <td> 
+                    <button (click)="deleteOption(x)"> x </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

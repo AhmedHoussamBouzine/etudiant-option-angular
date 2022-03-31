@@ -1,0 +1,16 @@
+<div class="form">
+    <h1>Add Option</h1>
+    <form [formGroup]="form" (ngSubmit)="addOption()" id="form">
+            <div>
+                <label for="nom option"> Nom </label> <input id="nom"  formControlName="nom" type="text" placeholder="Entrer le Nom">
+            </div>
+            <div>
+                <label for="description"> Description </label> <input  formControlName="Description" id="description" type="text" placeholder="Entrer la description">
+            </div>
+            <div>
+                <button id="submit" type="submit" [disabled]="!form.valid" >Submit</button>
+                <button type="button" (click)="reset()">Reset</button>
+            </div>
+    </form>
+   
+</div>
